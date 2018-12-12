@@ -19,6 +19,6 @@ public class MainDomain {
 
     public BBR getBbrObject (String address) { this.address = address; return getBbrObject(address);}
 
-    
+
 }
 
