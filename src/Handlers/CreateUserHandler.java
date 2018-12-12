@@ -7,7 +7,7 @@ import Model.UserInfo;
 
 public class CreateUserHandler {
 
-    public User addUser (String name, String emailAdress, String username, Role role, BBR bbrData, String password){
+    static public User addUser (String name, String emailAdress, String username, Role role, BBR bbrData, String password){
 
         UserInfo userInfo = new UserInfo(name, emailAdress, username, role, password);
         User newUser = new User(userInfo, bbrData);
