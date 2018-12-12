@@ -1,4 +1,5 @@
 package Model;
+import Handlers.UserValidationHandler;
 
 import java.util.ArrayList;
 
@@ -15,7 +16,7 @@ public class Login {
     }
 
     public boolean validate(String username, String password){
-        
+        return UserValidationHandler.validateUser(users, username, password) instanceof User;
     }
 
 }

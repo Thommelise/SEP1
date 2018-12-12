@@ -12,16 +12,14 @@ public class UserValidationHandler {
     String password;
     User user;
 
-    public User validateUser (ArrayList<User> users, String username, String password) {
-
+    public static User validateUser (ArrayList<User> users, String username, String password) {
 
         for (int i = 0; i < users.size(); i++) {
             if(users.get(i).getInfo().getUsername() == username && users.get(i).getInfo().getPassword() == password){
                 return users.get(i);
             }
         }
-
-
+        return null;
     }
 }
 
