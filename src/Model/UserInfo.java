@@ -22,7 +22,7 @@ public class UserInfo {
     public Enum getRole() {
         return role;
     }
-    public String getEmailAdress(){
+    public String getEmailAddress(){
         return emailAddress;
     }
     public String getName(){
@@ -38,7 +38,7 @@ public class UserInfo {
     public void setRole(){
        this.role = role;
     }
-    public void setEmailAdress() {
+    public void setEmailAddress() {
         this.emailAddress = emailAddress;
     }
     public void setName(){

@@ -6,6 +6,9 @@ public class BBR {
     ArrayList<Meter> meters = new ArrayList<>();
     User user;
     String address;
+    public BBR(String address){
+        this.address=address;
+    }
 
     public ArrayList<Meter> getMeters() {
         return meters;
