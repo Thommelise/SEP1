@@ -11,16 +11,17 @@ public class UserValidationHandler {
     String username;
     String password;
     User user;
-    Login users;
 
-    public boolean validateUser (ArrayList users) {
+    public User validateUser (ArrayList<User> users, String username, String password) {
+
 
         for (int i = 0; i < users.size(); i++) {
-            if (users.contains(username) && users.contains(password)) return true;
-
+            if(users.get(i).getInfo().getUsername() == username && users.get(i).getInfo().getPassword() == password){
+                return users.get(i);
+            }
         }
 
-        return false;
+
     }
 }
 

@@ -14,4 +14,8 @@ public class Login {
         users.add(user);
     }
 
+    public boolean validate(String username, String password){
+        
+    }
+
 }
