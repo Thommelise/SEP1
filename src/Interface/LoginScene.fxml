@@ -7,13 +7,13 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="477.0" prefWidth="676.0" style="-fx-background-color: #2D3644;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.Controller">
+<AnchorPane prefHeight="477.0" prefWidth="676.0" style="-fx-background-color: #2D3644;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.LoginController">
    <children>
-      <PasswordField layoutX="353.0" layoutY="274.0" prefHeight="15.0" prefWidth="205.0" promptText="Password" style="-fx-background-color: #888888;" />
+      <PasswordField fx:id="password" layoutX="353.0" layoutY="274.0" prefHeight="15.0" prefWidth="205.0" promptText="Password" style="-fx-background-color: #888888;" />
 
-      <Button fx:id="loginbnt" layoutX="353.0" layoutY="346.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="205.0" style="-fx-background-color: #ffffff;" text="Login" />
+      <Button fx:id="loginButton" layoutX="353.0" layoutY="346.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="205.0" style="-fx-background-color: #ffffff;" text="Login" />
 
-      <TextField layoutX="353.0" layoutY="208.0" prefHeight="31.0" prefWidth="205.0" promptText="Username" style="-fx-background-color: #888888;" />
+      <TextField fx:id="user" layoutX="353.0" layoutY="208.0" prefHeight="31.0" prefWidth="205.0" promptText="Username" style="-fx-background-color: #888888;" />
 
       <Label alignment="CENTER" layoutX="353.0" layoutY="97.0" prefHeight="31.0" prefWidth="205.0" style="-fx-background-color: #2D3644;" text="Sign In " textFill="#1e0101">
 
@@ -21,6 +21,5 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Button layoutX="355.0" layoutY="398.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="205.0" text="Button" />
    </children>
 </AnchorPane>
