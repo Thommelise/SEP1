@@ -17,6 +17,6 @@ public class Consumption {
         return unit;
     }
     public String getConsumptionString() {
-        return count +" "+ unit;
+        return count +","+ unit;
     }
 }

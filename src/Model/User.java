@@ -14,11 +14,11 @@ public class User {
         return info;
     }
 
-
     public BBR getBbrData() {
         return bbrData;
     }
 
-
-
+    public void setBbrData(BBR bbrData) {
+        this.bbrData = bbrData;
+    }
 }

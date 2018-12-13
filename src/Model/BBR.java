@@ -29,7 +29,7 @@ public class BBR {
     public StringBuilder getMeterString(){
         StringBuilder meterString = new StringBuilder();
         for(int i = 0; i<meters.size(); i++){
-            meterString.append(address).append(meters.get(i).getConsumptionString());
+            meterString.append(address).append(',').append(meters.get(i).getConsumptionString());
         }
         return meterString;
     }
