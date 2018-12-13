@@ -26,7 +26,7 @@ public class Meter {
 
         StringBuilder consumptionString = new StringBuilder();
         for (int i = 0; i < consumptions.size(); i++) {
-            consumptionString.append(meterNr).append(meterType).append(consumptions.get(i).getConsumptionString());
+            consumptionString.append(meterNr).append(',').append(meterType).append(',').append(consumptions.get(i).getConsumptionString());
         }
         return consumptionString;
     }

@@ -15,8 +15,8 @@ public class Login {
         users.add(user);
     }
 
-    public boolean validate(String username, String password){
-        return UserValidationHandler.validateUser(users, username, password) instanceof User;
+    public User validate(String username, String password){
+        return UserValidationHandler.validateUser(users, username, password);
     }
 
 }

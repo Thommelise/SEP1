@@ -1,26 +1,47 @@
 package Model;
 
+import Handlers.CreateBBR;
+import Handlers.CreateConsumption;
+import Handlers.CreateUserHandler;
+
 import java.util.ArrayList;
 
 public class MainDomain {
 
-    String username;
-    String password;
-    String address;
     Login login = new Login();
     private ArrayList<BBR> bbrArrayList = new ArrayList<>();
 
-    public User login (String username, String password){
-        this.username = username;
-        this.password = password;
-
-        return login(username, password);
+    public User login(String username, String password){
+        return login.validate(username, password);
     }
 
-    public BBR getBbrObject (String address) { this.address = address; return getBbrObject(address);}
+    public BBR getBbrObject(String address){
+        return getBbrObject(address);
+    }
 
-    public void addUser (User user) { login.addUser(user);
+    public void addUser(String name, String emailAddress, String username, Role role, BBR bbrData, String password){
+        login.addUser(CreateUserHandler.createUser(name, emailAddress, username, role, bbrData, password));
+    }
 
+    public void addBbr(String Address){
+        CreateBBR.createBbr(Address);
+    }
+
+    public void addConsumption(Meter meter, double count, Role role){
+        meter.addConsumption(CreateConsumption.createConsumption(count, role));
+    }
+
+    public void setBbr(User user, BBR bbr){
+        user.setBbrData(bbr);
+    }
+
+    public String getConsumption(BBR bbr){
+        StringBuilder consumptionString = new StringBuilder();
+        for (int i = 0; i<bbr.getMeters().size(); i++){
+            consumptionString.append(bbr.getMeter(i).getConsumptionString()).append(',');
+        }
+        consumptionString.deleteCharAt(consumptionString.length());
+        return consumptionString.toString();
     }
 
 
