@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="477.0" prefWidth="676.0" style="-fx-background-color: #2d3644;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.AddNewUserController">
+   <children>
+      <TextField fx:id="name" layoutX="58.0" layoutY="58.0" promptText="Name" />
+      <TextField fx:id="emailaddress" layoutX="58.0" layoutY="123.0" promptText="Email Address" />
+      <TextField fx:id="username" layoutX="58.0" layoutY="197.0" promptText="Username" />
+      <TextField fx:id="role" layoutX="58.0" layoutY="266.0" promptText="Role" />
+      <TextField fx:id="password" layoutX="58.0" layoutY="334.0" promptText="Password" />
+      <Button layoutX="393.0" layoutY="334.0" mnemonicParsing="false" onAction="#addNewUser" prefHeight="31.0" prefWidth="187.0" text="Add The User" />
+   </children>
+</AnchorPane>
