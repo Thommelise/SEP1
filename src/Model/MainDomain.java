@@ -2,6 +2,7 @@ package Model;
 
 import Handlers.CreateBBR;
 import Handlers.CreateConsumption;
+import Handlers.CreateMeter;
 import Handlers.CreateUserHandler;
 
 import java.util.ArrayList;
@@ -48,8 +49,14 @@ public class MainDomain {
         consumptionString.deleteCharAt(consumptionString.length());
         return consumptionString.toString();
     }
+    public void addMeter(BBR bbr, Enum meterType, int meterNr){
+        bbr.addMeter(CreateMeter.createMeter(meterType,meterNr));
+    }
     public void toggleMeter(Meter meter){
         meter.toggleActive();
+    }
+    public ArrayList<User> getUsers (){
+        return login.getUsers();
     }
 
 }
