@@ -14,4 +14,11 @@ public class ConsumptionController {
 
         System.out.println(domain.toString());
     }
+
+    @FXML
+    void ShowUser(javafx.event.ActionEvent event) {
+
+        domain.u
+    }
+
 }

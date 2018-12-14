@@ -7,7 +7,8 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="rootPane" prefHeight="477.0" prefWidth="676.0" style="-fx-background-color: #2D3644;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.LoginController">
+<?import javafx.scene.layout.Pane?>
+<AnchorPane fx:id="rooPane" prefHeight="477.0" prefWidth="676.0" style="-fx-background-color: #2D3644;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.LoginController">
    <children>
       <PasswordField fx:id="password" layoutX="353.0" layoutY="274.0" prefHeight="15.0" prefWidth="205.0" promptText="Password" style="-fx-background-color: #888888;" />
 

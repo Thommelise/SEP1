@@ -2,21 +2,38 @@ package Model;
 
 
 
+import com.sun.jndi.toolkit.url.Uri;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+
+import java.net.URL;
 
 
 public class Main extends Application {
+    private static BorderPane root = new BorderPane();
+
+    public static BorderPane getRoot(){
+        return root;
+    }
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("../Interface/LoginScene.fxml"));
-        primaryStage.setTitle("Energy");
-        primaryStage.setScene(new Scene(root, 676  , 477));
+
+        URL loginSceneURL = getClass().getResource("../Interface/LoginScene.fxml");
+        AnchorPane loginScene = FXMLLoader.load(loginSceneURL);
+        root.setCenter(loginScene);
+
+        Scene scene = new Scene(root,676,477);
+        primaryStage.setTitle("");
+        primaryStage.setScene(scene);
         primaryStage.show();
+
     }
 
 

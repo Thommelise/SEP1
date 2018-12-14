@@ -1,13 +1,16 @@
 package Interface;
 
+import Model.Main;
 import javafx.fxml.FXMLLoader;
 import Model.MainDomain;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 
 import java.io.IOException;
+import java.net.URL;
 
 
 public class LoginController {
@@ -23,11 +26,14 @@ public class LoginController {
     @FXML
     void  loginButton (javafx.event.ActionEvent event){
 
-        //if (domain.login(user.getText(), password.getText())!=null) {
+       // if (domain.login(user.getText(), password.getText())!=null) {
          try {
 
-              AnchorPane superUser = FXMLLoader.load(getClass().getResource("SuperUser.fxml"));
-              rootPane.getChildren().setAll(superUser);
+             URL superUserUrl = getClass().getResource("../Interface/SuperUser.fxml");
+             AnchorPane superUser = FXMLLoader.load(superUserUrl);
+
+             BorderPane border = Main.getRoot();
+             border.setCenter(superUser);
 
 
 

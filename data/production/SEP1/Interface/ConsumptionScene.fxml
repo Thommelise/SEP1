@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane prefHeight="477.0" prefWidth="676.0" style="-fx-background-color: #2d3644;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.SuperUserController">
-    <children>
-
-    </children>
+   <children>
+      <ComboBox layoutX="147.0" layoutY="79.0" prefHeight="31.0" prefWidth="169.0" />
+      <Button layoutX="147.0" layoutY="165.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="382.0" text="Show Consumption" />
+      <ComboBox layoutX="367.0" layoutY="79.0" prefHeight="31.0" prefWidth="169.0" />
+   </children>
 </AnchorPane>

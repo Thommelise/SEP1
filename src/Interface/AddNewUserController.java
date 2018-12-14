@@ -31,7 +31,7 @@ public class AddNewUserController {
 @FXML
     void Home (javafx.event.ActionEvent event) throws IOException {
 
-    AnchorPane superUser = FXMLLoader.load(getClass().getResource("SuperUser.fxml"));
+    AnchorPane superUser = FXMLLoader.load(getClass().getResource("Interface/SuperUser.fxml"));
     rootPane.getChildren().setAll(superUser);
 }
 }
