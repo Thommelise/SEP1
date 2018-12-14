@@ -4,10 +4,10 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="477.0" prefWidth="676.0" style="-fx-background-color: #2d3644;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.SuperUserController">
+<AnchorPane fx:id="rootPane" prefHeight="477.0" prefWidth="676.0" style="-fx-background-color: #2d3644;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.ConsumptionController">
    <children>
-      <ComboBox layoutX="147.0" layoutY="79.0" prefHeight="31.0" prefWidth="169.0" />
-      <Button layoutX="147.0" layoutY="165.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="382.0" text="Show Consumption" />
-      <ComboBox layoutX="367.0" layoutY="79.0" prefHeight="31.0" prefWidth="169.0" />
+      <ComboBox fx:id="showUser" layoutX="147.0" layoutY="79.0" onAction="#ShowUser" prefHeight="31.0" prefWidth="169.0" />
+      <Button layoutX="147.0" layoutY="165.0" mnemonicParsing="false" onAction="#ShowConsumptionButton" prefHeight="31.0" prefWidth="382.0" text="Show Consumption" />
+      <ComboBox layoutX="367.0" layoutY="79.0" onAction="#ShowEnum" prefHeight="31.0" prefWidth="169.0" />
    </children>
 </AnchorPane>

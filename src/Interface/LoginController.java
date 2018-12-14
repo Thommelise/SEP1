@@ -29,7 +29,7 @@ public class LoginController {
        // if (domain.login(user.getText(), password.getText())!=null) {
          try {
 
-             URL superUserUrl = getClass().getResource("../Interface/SuperUser.fxml");
+             URL superUserUrl = getClass().getResource("SuperUser.fxml");
              AnchorPane superUser = FXMLLoader.load(superUserUrl);
 
              BorderPane border = Main.getRoot();

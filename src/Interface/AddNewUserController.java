@@ -12,12 +12,12 @@ import java.io.IOException;
 public class AddNewUserController {
 
     MainDomain domain = new MainDomain();
-    @FXML private TextField name;
-    @FXML private TextField emailaddress;
-    @FXML private TextField username;
-    @FXML private TextField role;
-    @FXML private TextField password;
-    @FXML private TextField Address;
+    @FXML private javafx.scene.control.TextField name;
+    @FXML private javafx.scene.control.TextField emailaddress;
+    @FXML private javafx.scene.control.TextField username;
+    @FXML private javafx.scene.control.TextField role;
+    @FXML private javafx.scene.control.TextField password;
+    @FXML private javafx.scene.control.TextField address;
     @FXML AnchorPane rootPane;
 
 
@@ -25,7 +25,7 @@ public class AddNewUserController {
     void addNewUser (javafx.event.ActionEvent event){
 
 
-    domain.addUser(name.getText(),emailaddress.getText() ,username.getText() ,(Role.valueOf(role.getText())) , domain.getBbrObject(Address.getText()),password.getText() );
+    domain.addUser(name.getText(),emailaddress.getText() ,username.getText() ,(Role.valueOf(role.getText())) , domain.getBbrObject(address.getText()),password.getText() );
 }
 
 @FXML

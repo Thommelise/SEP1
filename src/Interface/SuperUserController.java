@@ -1,9 +1,6 @@
 package Interface;
 import java.net.URL;
-import java.util.ResourceBundle;
-
 import Model.Main;
-import Model.MainDomain;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.AnchorPane;
@@ -14,9 +11,22 @@ import java.io.IOException;
 
 
 public class SuperUserController {
-    @FXML AnchorPane rootPane;
 
-    MainDomain domain = new MainDomain();
+    @FXML
+    void  addNewUserButton (javafx.event.ActionEvent event) {
+
+        try{
+
+            URL addNewUserUrl = getClass().getResource("../Interface/AddNewUserScene.fxml");
+            AnchorPane addNewUser = FXMLLoader.load(addNewUserUrl);
+            BorderPane border = Main.getRoot();
+            border.setCenter(addNewUser);
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }}
+
+    @FXML AnchorPane rootPane;
 
     @FXML
         void  consumptionButton (javafx.event.ActionEvent event) {
@@ -27,10 +37,6 @@ public class SuperUserController {
                 AnchorPane consumption = FXMLLoader.load(consumptionUrl);
                 BorderPane border = Main.getRoot();
                 border.setCenter(consumption);
-
-
-
-
             }
             catch (IOException e) {
                 e.printStackTrace();
