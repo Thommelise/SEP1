@@ -16,7 +16,12 @@ public class MainDomain {
     }
 
     public BBR getBbrObject(String address){
-        return getBbrObject(address);
+        for (int i = 0; i<bbrArrayList.size(); i++){
+            if (bbrArrayList.get(i).getAddress() == address){
+                return bbrArrayList.get(i);
+            }
+        }
+        return null;
     }
 
     public void addUser(String name, String emailAddress, String username, Role role, BBR bbrData, String password){
@@ -43,7 +48,9 @@ public class MainDomain {
         consumptionString.deleteCharAt(consumptionString.length());
         return consumptionString.toString();
     }
-
+    public void toggleMeter(Meter meter){
+        meter.toggleActive();
+    }
 
 }
 

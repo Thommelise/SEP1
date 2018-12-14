@@ -26,6 +26,10 @@ public class BBR {
         meters.add(meter);
     }
 
+    public String getAddress(){
+        return address;
+    }
+
     public StringBuilder getMeterString(){
         StringBuilder meterString = new StringBuilder();
         for(int i = 0; i<meters.size(); i++){
