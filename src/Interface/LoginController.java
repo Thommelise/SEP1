@@ -26,7 +26,7 @@ public class LoginController {
     @FXML
     void  loginButton (javafx.event.ActionEvent event){
 
-       // if (domain.login(user.getText(), password.getText())!=null) {
+       //if (domain.login(user.getText(), password.getText())!=null) {
          try {
 
              URL superUserUrl = getClass().getResource("SuperUser.fxml");

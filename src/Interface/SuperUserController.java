@@ -13,6 +13,46 @@ import java.io.IOException;
 public class SuperUserController {
 
     @FXML
+    void activeUserButton (javafx.event.ActionEvent event) {
+        try{
+        URL activeUserButton = getClass().getResource("../Interface/ActiveScene.fxml");
+        AnchorPane activeUser = FXMLLoader.load(activeUserButton);
+        BorderPane border = Main.getRoot();
+        border.setCenter(activeUser);
+
+    }catch (IOException e){e.printStackTrace();}}
+
+    @FXML
+    void inactiveUserButton (javafx.event.ActionEvent event){
+        try {
+            URL inactiveUserButton =getClass().getResource("../Interface/InactiveScene.fxml");
+            AnchorPane inactiveUser = FXMLLoader.load(inactiveUserButton);
+            BorderPane border = Main.getRoot();
+            border.setCenter(inactiveUser);
+
+    }catch (IOException e){ e.printStackTrace();}}
+
+    @FXML
+    void deleteUserButton (javafx.event.ActionEvent event) {
+        try {
+            URL deleteUserButtonUrl = getClass().getResource("../Interface/DeleteUserScene.fxml");
+            AnchorPane deleteUser = FXMLLoader.load(deleteUserButtonUrl);
+            BorderPane border = Main.getRoot();
+            border.setCenter(deleteUser);
+        } catch (IOException e){e.printStackTrace();}
+    }
+
+    @FXML
+    void userButton (javafx.event.ActionEvent event){
+        try {
+            URL userButtonUrl = getClass().getResource("../Interface/UserScene.fxml");
+            AnchorPane user = FXMLLoader.load(userButtonUrl);
+            BorderPane border = Main.getRoot();
+            border.setCenter(user);
+        }catch(IOException e){e.printStackTrace();}
+    }
+
+    @FXML
     void  addNewUserButton (javafx.event.ActionEvent event) {
 
         try{
