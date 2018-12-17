@@ -50,5 +50,11 @@ public class UserInfo {
     public void setPassword(){
         this.password=password;
     }
+
+    public String getUserString(){
+        StringBuilder userSB = new StringBuilder();
+        userSB.append(name).append(emailAddress).append(username).append(role);
+        return String.valueOf(userSB);
+    }
 }
 
