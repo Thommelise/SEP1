@@ -5,8 +5,13 @@ import Model.MainDomain;
 import Model.Meter;
 import Model.User;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.ComboBox;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 
+import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 
 
@@ -18,6 +23,15 @@ public class ConsumptionController {
 
 
     MainDomain domain = new MainDomain();
+
+    @FXML
+    void homeButton (){
+        try {
+            URL homeButtonUrl = getClass().getResource("../Interface/SuperUser.fxml");
+            AnchorPane homeButton = FXMLLoader.load(homeButtonUrl);
+            BorderPane border = Main.getRoot();
+            border.setCenter(homeButton);
+        }catch (IOException e){e.printStackTrace();}}
 
 
     @FXML

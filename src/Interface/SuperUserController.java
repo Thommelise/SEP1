@@ -13,6 +13,16 @@ import java.io.IOException;
 public class SuperUserController {
 
     @FXML
+    void logOutButton () {
+        try{
+        URL logOutUrl = getClass().getResource("../Interface/LoginScene.fxml");
+        AnchorPane logOut = FXMLLoader.load(logOutUrl);
+        BorderPane border = Main.getRoot();
+        border.setCenter(logOut);
+    }catch(IOException e){e.printStackTrace();}}
+
+
+    @FXML
     void activeUserButton (javafx.event.ActionEvent event) {
         try{
         URL activeUserButton = getClass().getResource("../Interface/ActiveScene.fxml");

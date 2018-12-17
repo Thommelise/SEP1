@@ -55,6 +55,7 @@ public class MainDomain {
     public void toggleMeter(Meter meter){
         meter.toggleActive();
     }
+
     public ArrayList<User> getUsers (){
         return login.getUsers();
     }

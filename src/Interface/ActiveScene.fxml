@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-
-<AnchorPane prefHeight="477.0" prefWidth="676.0" style="-fx-background-color: #2d3644;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.ActiveController">
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
 
 
+<AnchorPane prefHeight="477.0" prefWidth="676.0" style="-fx-background-color: #2d3644;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.ActiveController">
+   <children>
+      <Button layoutX="597.0" layoutY="432.0" mnemonicParsing="false" onAction="#homeButton" text="Home" />
+   </children>
 </AnchorPane>
