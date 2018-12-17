@@ -10,6 +10,7 @@ import java.util.ArrayList;
 public class MainDomain {
 
     Login login = new Login();
+
     private ArrayList<BBR> bbrArrayList = new ArrayList<>();
 
     public User login(String username, String password){
@@ -49,9 +50,11 @@ public class MainDomain {
         consumptionString.deleteCharAt(consumptionString.length());
         return consumptionString.toString();
     }
+
     public void addMeter(BBR bbr, Enum meterType, int meterNr){
         bbr.addMeter(CreateMeter.createMeter(meterType,meterNr));
     }
+
     public void toggleMeter(Meter meter){
         meter.toggleActive();
     }
