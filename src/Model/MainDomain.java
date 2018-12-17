@@ -60,5 +60,8 @@ public class MainDomain {
         return login.getUsers();
     }
 
+    public void removeUser(User user){
+        login.removeUser(user);
+    }
 }
 

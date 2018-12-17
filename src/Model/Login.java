@@ -18,5 +18,8 @@ public class Login {
     public User validate(String username, String password){
         return UserValidationHandler.validateUser(users, username, password);
     }
+    public void removeUser(User user){
+        users.remove(user);
+    }
 
 }
