@@ -9,7 +9,7 @@ public class Meter {
     Enum meterType;
     ArrayList<Consumption> consumptions = new ArrayList<>();
     int meterNr;
-    Date date = Date.from(Instant.now());
+    LocalDate date = LocalDate.now();
     boolean active = true;
 
 
@@ -31,7 +31,8 @@ public class Meter {
 
         StringBuilder consumptionString = new StringBuilder();
         for (int i = 0; i < consumptions.size(); i++) {
-            consumptionString.append(meterNr).append(active).append(',').append(',').append(meterType).append(',').append(consumptions.get(i).getConsumptionString());
+            consumptionString.append(meterNr).append(',').append(active).append(',').append(meterType).append(',').append(consumptions.get(i).getConsumptionString())
+            .append(',').append(date.getDayOfMonth()).append('-').append(date.getMonthValue()).append('-').append(date.getYear());
         }
         return consumptionString;
     }

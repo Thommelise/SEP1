@@ -1,5 +1,6 @@
 package Interface;
 
+import Handlers.CreateConsumption;
 import Model.*;
 import Model.MainDomain;
 import Model.Meter;
@@ -46,7 +47,12 @@ public class ConsumptionController {
 
         try {
             tempEnum = (MeterType) showEnum.getValue();
-            userMeters = ((User) showUser.getValue()).getBbrData().getMeters();
+
+            for (User user:domain.getUsers()){
+                if (showUser.getValue() == user.getInfo().getName()){
+                    userMeters = (user).getBbrData().getMeters();
+                }
+            }
         } catch(Exception e){ e.printStackTrace();
 
         }
@@ -73,12 +79,23 @@ public class ConsumptionController {
     @FXML
     void ShowUser() {
         showUser.getItems().clear();
-        for(int i = 0; i<domain.getUsers().size();i++) {
-
-            showUser.getItems().add(domain.getUsers().get(i));
-
+        for(User user :domain.getUsers()) {
+            showUser.getItems().add(user.getInfo().getName());
         }
 
     }
-
+@FXML
+    void addConsumption(){
+        for(BBR bbr:domain.getBbr()){
+            for(Meter meter:bbr.getMeters()){
+                if(meter.getType() == MeterType.HEAT) {
+                    meter.addConsumption(CreateConsumption.createConsumption(((float) Math.random()*2), Unit.MWH));
+                }else if(meter.getType() == MeterType.WATER){
+                    meter.addConsumption(CreateConsumption.createConsumption(((float) Math.random()*10), Unit.M3));
+                }else if(meter.getType() == MeterType.POWER){
+                    meter.addConsumption(CreateConsumption.createConsumption(((float) Math.random()*12), Unit.KWH));
+                }
+            }
+        }
+    }
 }

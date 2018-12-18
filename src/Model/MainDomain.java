@@ -5,6 +5,8 @@ import Handlers.CreateConsumption;
 import Handlers.CreateMeter;
 import Handlers.CreateUserHandler;
 
+import java.io.File;
+import java.io.FileWriter;
 import java.util.ArrayList;
 
 public class MainDomain {
@@ -71,6 +73,25 @@ public class MainDomain {
     }
     public ArrayList<BBR> getBbr(){
         return bbrArrayList;
+    }
+
+    public void writeToFile(){
+
+        try {
+            File bbrFile = new File("BBR.txt");
+            FileWriter fr = new FileWriter(bbrFile, true);
+            for (BBR bbr : bbrArrayList)
+                fr.write(String.valueOf(bbr.getMeterString())+"\r\n");
+            fr.close();
+        }catch(Exception e){}
+        
+        try {
+            File userFile = new File("Users.txt");
+            FileWriter fr = new FileWriter(userFile, true);
+            for (User user : login.getUsers())
+                fr.write(String.valueOf(user.getInfo().getUsername()+','+user.getInfo().getPassword())+"\r\n");
+            fr.close();
+        }catch (Exception e){}
     }
 }
 

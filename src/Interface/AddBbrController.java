@@ -1,5 +1,6 @@
 package Interface;
 
+import Model.BBR;
 import Model.Main;
 import Model.MainDomain;
 import javafx.fxml.FXML;
@@ -20,7 +21,22 @@ public class AddBbrController {
 
     @FXML
     void addBbr() {
-        domain.addBbr(textField.getText());
+
+        String address = null;
+        boolean addressFree = true;
+        try{
+            address = textField.getText();
+        }catch(Exception e){}
+
+        for(BBR bbr : domain.getBbr()){
+            if(address == bbr.getAddress()){
+                addressFree = false;
+            }
+        }
+        if (addressFree == true){
+            domain.addBbr(address);
+        }
+        addressFree = true;
     }
 
     @FXML
