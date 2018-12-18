@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="477.0" prefWidth="676.0" style="-fx-background-color: #2d3644;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.AddMeterController">
+   <children>
+      <Text layoutX="212.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add New Meter">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Text>
+      <ComboBox fx:id="comboBox" editable="true" layoutX="236.0" layoutY="239.0" onShowing="#setComboBox" prefHeight="31.0" prefWidth="187.0" promptText="Meter Type" visibleRowCount="0" />
+      <Button layoutX="236.0" layoutY="321.0" mnemonicParsing="false" onMouseClicked="#addMeter" prefHeight="31.0" prefWidth="187.0" text="Add Meter" />
+      <Button layoutX="597.0" layoutY="432.0" mnemonicParsing="false" onAction="#homeButton" text="Home" />
+      <ComboBox fx:id="comboBox1" editable="true" layoutX="236.0" layoutY="157.0" onShowing="#setComboBox1" prefHeight="31.0" prefWidth="187.0" promptText="Addresse" />
+   </children>
+
+</AnchorPane>

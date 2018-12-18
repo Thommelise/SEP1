@@ -9,8 +9,8 @@
 <AnchorPane prefHeight="477.0" prefWidth="676.0" style="-fx-background-color: #2d3644;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.DeleteUserController">
    <children>
       <Button layoutX="597.0" layoutY="432.0" mnemonicParsing="false" onAction="#homeButton" text="Home" />
-      <ComboBox layoutX="62.0" layoutY="118.0" prefHeight="31.0" prefWidth="248.0" />
-      <Button layoutX="372.0" layoutY="118.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="248.0" text="Delete" />
+      <ComboBox fx:id="comboBox" layoutX="62.0" layoutY="118.0" onShown="#setComboBox" prefHeight="31.0" prefWidth="248.0" />
+      <Button layoutX="372.0" layoutY="118.0" mnemonicParsing="false" onMouseClicked="#deleteUser" prefHeight="31.0" prefWidth="248.0" text="Delete" />
       <Text layoutX="136.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose User">
          <font>
             <Font size="18.0" />

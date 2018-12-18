@@ -1,5 +1,6 @@
 package Interface;
 
+import Model.BBR;
 import Model.Main;
 import Model.MainDomain;
 import Model.Role;
@@ -14,14 +15,16 @@ import java.net.URL;
 
 public class AddNewUserController {
 
-    MainDomain domain = new MainDomain();
+    MainDomain domain = LoginController.domain;
     @FXML private javafx.scene.control.TextField name;
     @FXML private javafx.scene.control.TextField emailaddress;
     @FXML private javafx.scene.control.TextField username;
     @FXML private javafx.scene.control.TextField role;
     @FXML private javafx.scene.control.TextField password;
-    @FXML private javafx.scene.control.TextField address;
+    @FXML private javafx.scene.control.ComboBox address;
     @FXML AnchorPane rootPane;
+
+
 
     @FXML
     void homeButton() {
@@ -35,19 +38,29 @@ public class AddNewUserController {
         }
     }
 
+    @FXML
+    void loadUsers (){
+        address.getItems().clear();
+        for (BBR bbr: domain.getBbr()) {
+            address.getItems().add(bbr.getAddress());
+        }
+    }
 
     @FXML
     void addNewUser (javafx.event.ActionEvent event){
 
-
-    domain.addUser(name.getText(),emailaddress.getText() ,username.getText() ,(Role.valueOf(role.getText())) , domain.getBbrObject(address.getText()),password.getText() );
+        for (BBR bbr:domain.getBbr()) {
+            if (bbr.getAddress() == ((String) address.getValue())){
+                domain.addUser(name.getText(), emailaddress.getText(), username.getText(), (Role.valueOf(role.getText().toUpperCase())), bbr, password.getText());
+            }
+        }
 
     name.clear();
     emailaddress.clear();
     username.clear();
     role.clear();
     password.clear();
-    address.clear();
+
 }
 
 @FXML

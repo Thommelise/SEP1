@@ -7,6 +7,7 @@ import Model.User;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextArea;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 
@@ -18,11 +19,13 @@ import java.util.ArrayList;
 public class ConsumptionController {
 
     @FXML
-    private ComboBox showUser;
-    private ComboBox selectedType;
+    ComboBox showUser = new ComboBox();
+    @FXML
+    ComboBox showEnum = new ComboBox();
+    @FXML
+    TextArea showConsumption = new TextArea();
 
-
-    MainDomain domain = new MainDomain();
+    MainDomain domain = LoginController.domain;
 
     @FXML
     void homeButton (){
@@ -36,12 +39,22 @@ public class ConsumptionController {
 
     @FXML
     void ShowConsumptionButton(){
-        User tempUser = (User) showUser.getValue();
-        ArrayList<Meter> userMeters = tempUser.getBbrData().getMeters();
-        ArrayList<Meter> selectedMeters = new ArrayList<>();
+
+
+        ArrayList<Meter> userMeters = new ArrayList<Meter>();
+        MeterType tempEnum = null;
+
+        try {
+            tempEnum = (MeterType) showEnum.getValue();
+            userMeters = ((User) showUser.getValue()).getBbrData().getMeters();
+        } catch(Exception e){ e.printStackTrace();
+
+        }
+
         for(int i = 0; i<userMeters.size(); i++){
-            if(userMeters.get(i).getType().equals(selectedType.getValue())){
-                selectedMeters.add(userMeters.get(i));
+            if(userMeters.get(i).getType().equals(tempEnum)){
+                showConsumption.appendText(userMeters.get(i).getConsumptionString().toString());
+
             }
 
         }
@@ -50,15 +63,16 @@ public class ConsumptionController {
 
     @FXML
     void ShowEnum(){
-        MeterType[] types = new MeterType[MeterType.values().length];
-       for(int i = 0; i<types.length;i++){
-           selectedType.getItems().add(types[i]);
-       }
+        showEnum.getItems().clear();
+        for (int i = 0; i<MeterType.values().length; i++){
+            showEnum.getItems().add(MeterType.values()[i]);
+        }
+
     }
 
     @FXML
-    void ShowUser(javafx.event.ActionEvent event) {
-
+    void ShowUser() {
+        showUser.getItems().clear();
         for(int i = 0; i<domain.getUsers().size();i++) {
 
             showUser.getItems().add(domain.getUsers().get(i));

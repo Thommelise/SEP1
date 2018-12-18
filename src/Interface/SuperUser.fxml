@@ -19,5 +19,7 @@
       <Button layoutX="468.0" layoutY="274.0" mnemonicParsing="false" onAction="#deleteUserButton" prefHeight="31.0" prefWidth="116.0" text="Delete User" />
       <Button layoutX="80.0" layoutY="274.0" mnemonicParsing="false" onAction="#activeUserButton" prefHeight="31.0" prefWidth="121.0" text="Active" />
       <Button layoutX="597.0" layoutY="432.0" mnemonicParsing="false" onAction="#logOutButton" text="Logout" />
+      <Button fx:id="AddMeterButton" layoutX="80.0" layoutY="380.0" mnemonicParsing="false" onAction="#addNewMeter" prefHeight="31.0" prefWidth="121.0" text="Add Meter" />
+      <Button layoutX="262.0" layoutY="380.0" mnemonicParsing="false" onAction="#addBbrButton" prefHeight="31.0" prefWidth="116.0" text="Add BBR" />
    </children>
 </AnchorPane>

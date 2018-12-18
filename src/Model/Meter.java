@@ -35,6 +35,10 @@ public class Meter {
         active = !active;
     }
 
+    public boolean isActive(){
+        return active;
+    }
+
     public Enum getType(){
         return meterType;
     }

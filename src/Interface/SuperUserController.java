@@ -13,6 +13,34 @@ import java.io.IOException;
 public class SuperUserController {
 
     @FXML
+    void  addBbrButton (javafx.event.ActionEvent event) {
+
+        try{
+
+            URL addBbrURL = getClass().getResource("../Interface/AddBbrScene.fxml");
+            AnchorPane addbbr = FXMLLoader.load(addBbrURL);
+            BorderPane border = Main.getRoot();
+            border.setCenter(addbbr);
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }}
+
+    @FXML
+    void  addNewMeter (javafx.event.ActionEvent event) {
+
+        try{
+
+            URL addMeterUrl = getClass().getResource("../Interface/AddMeterScene.fxml");
+            AnchorPane addMeter = FXMLLoader.load(addMeterUrl);
+            BorderPane border = Main.getRoot();
+            border.setCenter(addMeter);
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }}
+
+    @FXML
     void logOutButton () {
         try{
         URL logOutUrl = getClass().getResource("../Interface/LoginScene.fxml");

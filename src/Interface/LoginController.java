@@ -14,14 +14,15 @@ import java.net.URL;
 
 
 public class LoginController {
+
+
     @FXML  private TextField user;
     @FXML  private TextField password;
     @FXML AnchorPane rootPane;
     @FXML Scene root;
 
 
-
-    MainDomain domain = new MainDomain();
+public static MainDomain domain = new MainDomain();
 
     @FXML
     void  loginButton (javafx.event.ActionEvent event){

@@ -2,6 +2,7 @@ package Interface;
 
 import Model.Main;
 import Model.MainDomain;
+import Model.User;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.TextArea;
@@ -13,12 +14,13 @@ import java.net.URL;
 
 public class UserController {
     public TextArea output;
-    MainDomain domain = new MainDomain();
 
-
+public static MainDomain domain = LoginController.domain;
     @FXML
     void showUsers(){
-        output.appendText(domain.getUsers().toString());
+        for (User user: domain.getUsers()){
+            output.appendText(user.getInfo().getName()+"\r\n");
+        }
     }
 
     @FXML

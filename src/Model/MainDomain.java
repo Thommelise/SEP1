@@ -31,7 +31,7 @@ public class MainDomain {
     }
 
     public void addBbr(String Address){
-        CreateBBR.createBbr(Address);
+        bbrArrayList.add(CreateBBR.createBbr(Address));
     }
 
     public void addConsumption(Meter meter, double count, Role role){
@@ -65,6 +65,12 @@ public class MainDomain {
 
     public void removeUser(User user){
         login.removeUser(user);
+    }
+    public int bbrSize(){
+        return bbrArrayList.size();
+    }
+    public ArrayList<BBR> getBbr(){
+        return bbrArrayList;
     }
 }
 
