@@ -1,11 +1,15 @@
 package Model;
 
+import java.time.Instant;
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Meter {
     Enum meterType;
     ArrayList<Consumption> consumptions = new ArrayList<>();
     int meterNr;
+    Date date = Date.from(Instant.now());
     boolean active = true;
 
 
