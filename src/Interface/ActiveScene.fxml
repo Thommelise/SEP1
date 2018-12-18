@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane prefHeight="477.0" prefWidth="676.0" style="-fx-background-color: #2d3644;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.ActiveController">
    <children>
       <Button layoutX="597.0" layoutY="432.0" mnemonicParsing="false" onAction="#homeButton" text="Home" />
-      <Button fx:id="activeButton" layoutX="190.0" layoutY="69.0" mnemonicParsing="false" onMouseClicked="#showActiveMeters" prefHeight="31.0" prefWidth="288.0" text="Show Active Meters" />
-      <TextArea fx:id="output" layoutX="60.0" layoutY="134.0" prefHeight="235.0" prefWidth="561.0" />
+      <Button layoutX="14.0" layoutY="252.0" mnemonicParsing="false" onMouseClicked="#showActiveMeters" prefHeight="31.0" prefWidth="288.0" text="Show Active Meters" />
+      <TextArea fx:id="output" layoutX="14.0" layoutY="354.0" prefHeight="109.0" prefWidth="548.0" />
+      <Button fx:id="activeButton1" layoutX="322.0" layoutY="252.0" mnemonicParsing="false" onMouseClicked="#showDeactivateBox" prefHeight="31.0" prefWidth="288.0" text="Show Inactive Meters" />
+      <ComboBox fx:id="addressBox" editable="true" layoutX="14.0" layoutY="14.0" onShowing="#setAddressBox" prefHeight="31.0" prefWidth="288.0" promptText="Addresse" />
+      <ComboBox fx:id="meterTypeBox" editable="true" layoutX="14.0" layoutY="92.0" onShowing="#setMeterTypeBox" prefHeight="31.0" prefWidth="288.0" promptText="Meter Type" />
+      <ComboBox fx:id="statusBox" editable="true" layoutX="14.0" layoutY="166.0" onShowing="#setStatusBox" prefHeight="31.0" prefWidth="288.0" promptText="Active / Inactive" />
+      <Button fx:id="execute" layoutX="322.0" layoutY="166.0" mnemonicParsing="false" onMouseClicked="#execute" prefHeight="31.0" prefWidth="288.0" text="Excecute" />
    </children>
 </AnchorPane>

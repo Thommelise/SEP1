@@ -1,11 +1,9 @@
 package Interface;
 
-import Model.Main;
-import Model.MainDomain;
-import Model.Meter;
-import Model.User;
+import Model.*;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
@@ -20,20 +18,80 @@ public class ActiveController {
     TextArea output = new TextArea();
 
     @FXML
-    void 
+    ComboBox addressBox = new ComboBox();
 
     @FXML
-    void deactivateMeters(){
+    ComboBox meterTypeBox = new ComboBox();
 
+    @FXML
+    ComboBox statusBox = new ComboBox();
+
+    @FXML
+    void setAddressBox() {
+        addressBox.getItems().clear();
+        for (BBR bbr : domain.getBbr()){
+            addressBox.getItems().add(bbr.getAddress());
+        }
+    }
+
+    @FXML
+    void setMeterTypeBox() {
+        meterTypeBox.getItems().clear();
+        for (MeterType meterType:MeterType.values()){
+            meterTypeBox.getItems().add(meterType.name());
+        }
+    }
+
+    @FXML
+    void setStatusBox() {
+        statusBox.getItems().clear();
+        statusBox.getItems().add("Activate");
+        statusBox.getItems().add("Inactive");
+    }
+
+    @FXML
+    void execute() {
+        for (BBR bbr : domain.getBbr()){
+            if(bbr.getAddress() == ((String)addressBox.getValue())){
+                for (Meter meter:bbr.getMeters()){
+                    if(meter.getType().name() == (String)meterTypeBox.getValue()) {
+                        if ((String) statusBox.getValue() == "Active") {
+                            if (meter.isActive() != true){
+                                meter.toggleActive();
+                            }
+                        } else if ((String) statusBox.getValue() == "Inactive") {
+                            if (meter.isActive() != false){
+                                meter.toggleActive();
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+
+
+    @FXML
+    void showDeactivateBox(){
+        output.clear();
+        for(BBR bbr:domain.getBbr()){
+            for(Meter meter:bbr.getMeters()){
+                if(!meter.isActive()) {
+                    output.appendText(bbr.getAddress() + "," + meter.getType().name() + "," + meter.isActive() + "\r\n");
+                }
+            }
+        }
     }
 
     @FXML
     void showActiveMeters() {
-
-        for (User user:domain.getUsers()){
-            for (Meter meter: user.getBbrData().getMeters()){
+        output.clear();
+        for (BBR bbr:domain.getBbr()){
+            for (Meter meter: bbr.getMeters()){
                 if(meter.isActive()){
-                    output.appendText(user.getBbrData().getAddress()+","+meter.getType().name()+","+meter.isActive()+"\r\n");
+                    output.appendText(bbr.getAddress()+","+meter.getType().name()+","+meter.isActive()+"\r\n");
                 }
             }
         }
