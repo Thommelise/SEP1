@@ -53,6 +53,7 @@ public class AddNewUserController {
             if (bbr.getAddress() == ((String) address.getValue())){
                 domain.addUser(name.getText(), emailaddress.getText(), username.getText(), (Role.valueOf(role.getText().toUpperCase())), bbr, password.getText());
             }
+
         }
 
     name.clear();

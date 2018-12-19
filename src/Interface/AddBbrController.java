@@ -37,6 +37,7 @@ public class AddBbrController {
             domain.addBbr(address);
         }
         addressFree = true;
+        textField.clear();
     }
 
     @FXML

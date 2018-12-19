@@ -1,4 +1,5 @@
 package Model;
+import Handlers.CreateUserHandler;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -10,6 +11,8 @@ import java.net.URL;
 
 
 public class Main extends Application {
+
+
     private static BorderPane root = new BorderPane();
 
     public static BorderPane getRoot(){
@@ -31,6 +34,8 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) {
+
+
         launch(args);
 
     }

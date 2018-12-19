@@ -22,12 +22,12 @@ public class LoginController {
     @FXML Scene root;
 
 
-public static MainDomain domain = new MainDomain();
+public static MainDomain domain= new MainDomain();
 
     @FXML
     void  loginButton (javafx.event.ActionEvent event){
 
-       //if (domain.login(user.getText(), password.getText())!=null) {
+       if (domain.login(user.getText(), password.getText())!=null) {
          try {
 
              URL superUserUrl = getClass().getResource("SuperUser.fxml");
@@ -36,12 +36,12 @@ public static MainDomain domain = new MainDomain();
              BorderPane border = Main.getRoot();
              border.setCenter(superUser);
 
-
-
-
           }
          catch (IOException e){e.printStackTrace();
 
-    }}}
+         }
+       }
+    }
+}
 
 

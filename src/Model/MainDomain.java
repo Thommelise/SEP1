@@ -4,6 +4,7 @@ import Handlers.CreateBBR;
 import Handlers.CreateConsumption;
 import Handlers.CreateMeter;
 import Handlers.CreateUserHandler;
+import javafx.fxml.FXML;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -12,6 +13,10 @@ import java.util.ArrayList;
 public class MainDomain {
 
     Login login = new Login();
+
+    public MainDomain(){
+        login.addUser(CreateUserHandler.createUser("Admin","" , "Admin", Role.SUPERUSER, null, "123"));
+    }
 
     private ArrayList<BBR> bbrArrayList = new ArrayList<>();
 
@@ -75,6 +80,7 @@ public class MainDomain {
         return bbrArrayList;
     }
 
+
     public void writeToFile(){
 
         try {
@@ -84,7 +90,7 @@ public class MainDomain {
                 fr.write(String.valueOf(bbr.getMeterString())+"\r\n");
             fr.close();
         }catch(Exception e){}
-        
+
         try {
             File userFile = new File("Users.txt");
             FileWriter fr = new FileWriter(userFile, true);

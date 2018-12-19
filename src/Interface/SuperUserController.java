@@ -1,6 +1,7 @@
 package Interface;
 import java.net.URL;
 import Model.Main;
+import Model.MainDomain;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.AnchorPane;
@@ -11,6 +12,14 @@ import java.io.IOException;
 
 
 public class SuperUserController {
+MainDomain domain = LoginController.domain;
+
+   @FXML
+   void writeToFile () {
+       domain.writeToFile();
+   }
+
+
 
     @FXML
     void  addBbrButton (javafx.event.ActionEvent event) {

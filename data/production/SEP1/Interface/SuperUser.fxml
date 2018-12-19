@@ -12,14 +12,15 @@
             <Font size="36.0" />
          </font>
       </Text>
-      <Button layoutX="468.0" layoutY="151.0" mnemonicParsing="false" onAction="#addNewUserButton" text="Add New User" />
+      <Button layoutX="468.0" layoutY="151.0" mnemonicParsing="false" onAction="#addNewUserButton" prefHeight="31.0" prefWidth="121.0" text="Add New User" />
       <Button layoutX="267.0" layoutY="151.0" mnemonicParsing="false" onAction="#consumptionButton" text="Consumption" />
       <Button layoutX="80.0" layoutY="151.0" mnemonicParsing="false" onAction="#inactiveUserButton" text="Inactive Meter" />
       <Button layoutX="267.0" layoutY="274.0" mnemonicParsing="false" onAction="#userButton" prefHeight="31.0" prefWidth="110.0" text="Users" />
-      <Button layoutX="468.0" layoutY="274.0" mnemonicParsing="false" onAction="#deleteUserButton" prefHeight="31.0" prefWidth="116.0" text="Delete User" />
+      <Button layoutX="468.0" layoutY="274.0" mnemonicParsing="false" onAction="#deleteUserButton" prefHeight="31.0" prefWidth="121.0" text="Delete User" />
       <Button layoutX="80.0" layoutY="274.0" mnemonicParsing="false" onAction="#activeUserButton" prefHeight="31.0" prefWidth="121.0" text="Active" />
       <Button layoutX="597.0" layoutY="432.0" mnemonicParsing="false" onAction="#logOutButton" text="Logout" />
       <Button fx:id="AddMeterButton" layoutX="80.0" layoutY="380.0" mnemonicParsing="false" onAction="#addNewMeter" prefHeight="31.0" prefWidth="121.0" text="Add Meter" />
       <Button layoutX="262.0" layoutY="380.0" mnemonicParsing="false" onAction="#addBbrButton" prefHeight="31.0" prefWidth="116.0" text="Add BBR" />
+      <Button layoutX="468.0" layoutY="380.0" mnemonicParsing="false" onAction="#writeToFile" prefHeight="31.0" prefWidth="121.0" text="Write to File" />
    </children>
 </AnchorPane>
